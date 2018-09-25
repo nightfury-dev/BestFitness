@@ -16,9 +16,10 @@ export class MapContainer extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3000/api/maps')
+    axios.get('http://localhost:3000/api/event_maps')
       .then((response) => {
         const data = response.data;
+        console.log("data is", data)
         const oldMapData = this.state.mapData
         const newMapData = []
         data.forEach((location) => {
@@ -39,6 +40,8 @@ export class MapContainer extends Component {
       console.log('clicked')
       return <InfoWindow visible={true} />
     })
+
+
 
     console.log(generateMapMarkers);
 
