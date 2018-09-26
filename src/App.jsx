@@ -10,7 +10,7 @@ import Maps from './components/map/fitness-maps.jsx';
 import Nutrition from './components/nutrition/nutrition-main.jsx';
 import Recent from './components/recent/recent-main.jsx';
 import BlogMain from './components/blogs/blog-main.jsx';
-import Events from './components/fitness-events/event-main.jsx';
+import EventMain from './components/fitness-events/event-main.jsx';
 
 import NavBar from './components/nav-bar/nav-bar.jsx'
 
