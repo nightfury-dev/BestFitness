@@ -2,12 +2,22 @@ import React, { Component } from "react";
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import axios from 'axios';
 
-const coordinates = (array) => {
-  return {lat: array[0], lng: array[1]}
+const latLng = (object) => {
+  return {
+    name: object.name,
+    description: object.description,
+    datetime: object.datetime,
+    point : {
+      lat: object.lat,
+      lng: object.lng
+    },
+    id: object.id
+
+  }
 }
 
 
-export class MapContainer extends Component {
+export class EventMap extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -71,11 +81,13 @@ export class MapContainer extends Component {
     return (
       <div>
 
-        <h3>{ mapInfo.name }</h3>
+        <h3>{mapInfo.name }</h3>
+        <p>{mapInfo.id}</p>
         <p>{mapInfo.description }</p>
         <p>{mapInfo.datetime}</p>
 
-      </div>)
+      </div>
+      )
   });
 
     return (
@@ -106,7 +118,7 @@ export class MapContainer extends Component {
 
 export default GoogleApiWrapper({
   apiKey: (process.env.REACT_APP_GOOGLE_API_KEY)
-})(MapContainer)
+})(EventMap)
 
 /*
 const myPlaces = this.state.mapData
