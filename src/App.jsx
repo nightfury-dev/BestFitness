@@ -17,7 +17,7 @@ import NavBar from './components/nav-bar/nav-bar.jsx'
 import history from "./history.jsx"
 import { withRouter, Router, Route, Link, Redirect, Switch } from 'react-router-dom';
 
-import generateUserURL from './_helper.jsx'
+import { generateUserURL } from './_helper.jsx'
 
 
 
