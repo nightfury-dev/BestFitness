@@ -127,7 +127,7 @@ export default class Dashboard extends Component {
 
   render() {
     return (
-      <main>
+      <main >
         <h1>Nutrition page</h1>
         <div className="watson">
         This is where watson api will go.
