@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import axios from "axios"
 
-export default class Input extends Component {
 
-  submitNutritionHandler = (e) => {
+const Input = (props) => {
 
     e.preventDefault();
     const formInput = e.target.elements
@@ -75,3 +73,6 @@ export default class Input extends Component {
     )
   }
 }
+
+
+export default Input;
