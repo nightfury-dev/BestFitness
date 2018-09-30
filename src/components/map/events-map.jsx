@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import axios from 'axios';
+import { css } from 'emotion';
+
 
 const latLng = (object) => {
   return {
@@ -37,16 +39,11 @@ export class EventMap extends Component {
         const data = response.data;
         console.log("data is", data)
         const oldMapData = this.state.mapData
-
-
         const newMapData = []
-
         data.forEach((location) => {
           newMapData.push(coordinates(location))
         })
-
         this.setState( {mapData: [...newMapData, ...oldMapData], loading: false} )
-
       })
   }
 
@@ -57,9 +54,6 @@ export class EventMap extends Component {
       showingInfoWindow: true
     });
   }
-
-
-
 
   render() {
     console.log("this.state.selectedPlace",this.state.selectedPlace);
@@ -88,32 +82,21 @@ export class EventMap extends Component {
 
       </div>
       )
-  });
+    });
 
     return (
-      <main>
+      <div className="eventsMap">
         <h2>Nearby Events:</h2>
-        <Map
-          google={this.props.google}
-          zoom={16}
-          initialCenter={{lat: 43.6446002, lng: -79.3951586}}
-        >
+        <Map google={this.props.google} zoom={16} initialCenter={{lat: 43.6446002, lng: -79.3951586}}>
           {generateMapMarkers}
-          <InfoWindow onClose={this.onInfoWindowClose}
-                      marker={this.state.activeMarker}
-                      visible={this.state.showingInfoWindow}
-          >
-          <div>
-            {mapInfos}
-          </div>
-
+          <InfoWindow onClose={this.onInfoWindowClose} marker={this.state.activeMarker} visible={this.state.showingInfoWindow}>
+            <div>
+              {mapInfos}
+            </div>
           </InfoWindow>
-
         </Map>
-      </main>
-    );
-  }
-
+      </div>
+  )}
 }
 
 export default GoogleApiWrapper({

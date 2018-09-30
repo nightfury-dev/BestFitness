@@ -29,6 +29,7 @@ export class GymMap extends Component {
         'Authorization': this.props.jwt
       }
     }
+
     axios(options)
       .then(response => {
         console.log('this is our response')
@@ -68,9 +69,8 @@ export class GymMap extends Component {
     console.log("this.state.selectedPlace.position", this.state.selectedPlace.position);
      console.log("type of this.state.selectedPlace.position", typeof(this.state.selectedPlace.position));
 
-
     return (
-      <main>
+      <div className="gymsMap">
         <h2>Nearby Gyms:</h2>
         <div>
         <Map
@@ -89,7 +89,7 @@ export class GymMap extends Component {
           </InfoWindow>
         </Map>
         </div>
-      </main>
+      </div>
     );
   }
 }
@@ -98,4 +98,3 @@ export default GoogleApiWrapper({
   apiKey: (process.env.REACT_APP_GOOGLE_API_KEY),
   libraries: ['places']
 })(GymMap)
-
