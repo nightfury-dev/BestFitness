@@ -95,6 +95,9 @@ export default class Dashboard extends Component {
     };
   }
 
+  componentDidMount() {
+  }
+
   render() {
     return (
       <main className="dashboardPage">
