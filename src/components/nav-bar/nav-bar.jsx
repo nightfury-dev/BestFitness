@@ -20,25 +20,25 @@ const NavBar = (props) => {
   return (
     <div className={NavBarStyling}>
       <li><Link to={generateUserURL(props.id, "dashboard")}>
-          <button>Dashboard</button>
+          <button className="navBarButtons">Dashboard</button>
       </Link></li>
       <li><Link to={generateUserURL(props.id, "map")}>
-          <button>Map</button>
+          <button className="navBarButtons">Map</button>
       </Link></li>
       <li><Link to={generateUserURL(props.id, "nutrition")}>
-          <button>Nutrition</button>
+          <button className="navBarButtons">Nutrition</button>
       </Link></li>
       <li><Link to={generateUserURL(props.id, "recent")}>
-          <button>Recent</button>
+          <button className="navBarButtons">Recent</button>
       </Link></li>
       <li><Link to={generateUserURL(props.id, "blog")}>
-          <button>Blog</button>
+          <button className="navBarButtons">Blog</button>
       </Link></li>
       <li><Link to={generateUserURL(props.id, "events")}>
-          <button>Events</button>
+          <button className="navBarButtons">Events</button>
       </Link></li>
       <li><Link to="/">
-        <button onClick={props.handleLogout}>Logout</button>
+        <button className="navBarButtons" onClick={props.handleLogout}>Logout</button>
       </Link></li>
     </div>
 
