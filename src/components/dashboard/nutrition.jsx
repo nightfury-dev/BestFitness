@@ -78,10 +78,10 @@ export default class Nutrition extends Component {
       fontName: "Roboto"
     };
 
-    if (this.state.nutrition) {
-      return (
-        <main className="dashboardNutrition border">
-          <h1>Nutrition</h1>
+    return (
+      <main className="dashboardNutrition border">
+        <h1>Nutrition</h1>
+        {this.state.nutrition &&
           <div className="dashboardCharts">
 
             <Chart
@@ -102,14 +102,8 @@ export default class Nutrition extends Component {
               legend_toggle
             />
           </div>
-        </main>
-      )
-    } else {
-      return (
-        <main className="dashboardNutrition border">
-          <h1>Fill out your past nutrition info!</h1>
-        </main>
-      )
-    }
+        }
+      </main>
+    )
   }
 }

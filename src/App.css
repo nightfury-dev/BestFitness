@@ -64,6 +64,7 @@ h1 {
   display: grid;
   grid-row: 1 / 4;
   align-content: start;
+  z-index: 100;
 }
 
 
@@ -486,4 +487,9 @@ th {
 
 
 
+
+.border:hover {
+  opacity: 1;
+  transform: scale(1.005);
+}
 
