@@ -63,8 +63,15 @@ export default class Nutrition extends Component {
     }
 
     const pieOptions = {
-      title: "",
-      backgroundColor: 'grey',
+      title: "Calories/Nutrient",
+      titleTextStyle: {
+        color: 'black',
+        fontName: 'Roboto',
+        fontSize: 30,
+        bold: true,
+        italic: false
+      },
+      backgroundColor: { fill: 'transparent' },
       pieHole: 0.6,
       slices: [
         {
@@ -99,7 +106,7 @@ export default class Nutrition extends Component {
       },
       chartArea: {
         left: 0,
-        top: 0,
+        top: 50,
         width: "100%",
         height: "80%"
       },
@@ -109,7 +116,6 @@ export default class Nutrition extends Component {
 
     return (
       <main className="dashboardNutrition border">
-        <h1>Calories/Nutrient</h1>
         {this.state.nutrition &&
           <div className="dashboardCharts">
 
