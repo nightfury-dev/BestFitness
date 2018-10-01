@@ -3,14 +3,22 @@ import axios from 'axios';
 
 const ImageUpload = (props) => {
 	return (
-		<main className="upload-image">
+		<main className="nutritionImageUpload border">
 			<form onSubmit={props.uploadButtonHandler}>
 				<input type="file" onChange={props.selectImageHandler} name="pic" accept="image/*"/>
 				<input type="datetime-local" name="datetime" />
-				<input type="submit" value="Upload" />
+				{props.image &&
+					<div>
+						<input type="submit" value="Upload" />
+					</div>
+				}
 			</form>
-			<p>Image preview:</p>
-			<img className="image-preview" src={props.image} height="150px" width="auto"/>
+			{props.image &&
+				<div>
+					<p>Image preview:</p>
+					<img className="image-preview" src={props.image} height="150px" width="auto"/>
+				</div>
+			}
 		</main>
 	);
 
