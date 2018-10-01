@@ -9,9 +9,13 @@ const generateLatLng = (x, y) => {
 
 const style = {
   height: '500px',
-  width: '500px',
-  display: 'grid',
-  position: 'none'
+  width: '100%',
+}
+
+const containerStyle = {
+  position: 'relative',
+  width: '100%',
+  height: '500px'
 }
 
 
