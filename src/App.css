@@ -118,6 +118,9 @@ h1 {
   transform: scaleX(1);
 }
 
+li {
+  list-style: none;
+}
 /* Recent feeds page */
 .feedPage {
   grid-row: 2;

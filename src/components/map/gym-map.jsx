@@ -7,6 +7,12 @@ const generateLatLng = (x, y) => {
   return {lat: x, lng: y}
 }
 
+const style = {
+  width: '100%',
+  height: '500px'
+}
+
+
 export class GymMap extends Component {
 
   constructor(props) {
