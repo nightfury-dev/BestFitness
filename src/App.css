@@ -380,13 +380,13 @@ h1 {
   padding: 20px;
 }
 
-.dashboardEventList {
+.dashboardFeedList {
   grid-row: 3;
   grid-column: 2;
   padding: 20px;
 }
 
-.dashboardFeedList {
+.dashboardEventList {
   grid-row: 3;
   grid-column: 1;
   padding: 20px;
