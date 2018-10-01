@@ -634,8 +634,6 @@ th {
 
 
 #page-wrap {
-  text-align: center;
-
   /* Prevent sidebar from showing a scrollbar on page */
   overflow: auto;
 }
