@@ -23,12 +23,13 @@ export class GymMap extends Component {
 
   constructor(props) {
     super(props)
+    this._source = axios.CancelToken.source();
     this.state = {
       data: [],
       showingInfoWindow: false,
       selectedPlace: {},
-
-
+      location: this.props.location,
+      isMounted: false
     }
   }
 
@@ -39,15 +40,22 @@ export class GymMap extends Component {
       headers: {
         'content-type': 'application/json',
         'Authorization': this.props.jwt
-      }
+      },
+      cancelToken: this._source.token
     }
-
     axios(options)
       .then(response => {
-        console.log('this is our response')
-        console.log(response.data)
-    })
+        this.setState({
+          data: response.data
+        })
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
 
+  componentWillUnmount() {
+    this._source.cancel('gym map failing.')
   }
 
     // axios.get('http://localhost:3000/api/gym_maps')

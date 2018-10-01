@@ -32,6 +32,7 @@ class App extends Component {
     this.state = {
       currentUser: null,
       userID: null,
+      location: "",
       jwt: null
     }
   }
@@ -55,6 +56,7 @@ class App extends Component {
           this.setState({
             currentUser: userInfo.firstName,
             userID: userInfo.userID,
+            location: userInfo.location,
             jwt: response.data
           }, () => {
             history.push(generateUserURL(this.state.userID, "dashboard"))
@@ -86,6 +88,7 @@ class App extends Component {
           this.setState({
             currentUser: userInfo.firstName,
             userID: userInfo.userID,
+            location: userInfo.location,
             jwt: response.data
           }, () => {
             history.push(generateUserURL(this.state.userID, "dashboard"))
@@ -98,6 +101,17 @@ class App extends Component {
     })
   }
 
+  _handleLocationUpdate = (e) => {
+    e.preventDefault();
+      axios.patch('http://localhost:3000/api/users/' + this.state.userID, {
+        id: this.state.userID,
+        location: e.target.location.value,
+        password: e.target.password.value
+      }).then(response => {
+        this.setState({location: response.data.location})
+      })
+  }
+
 // do i need the user ID for navbar?? think some more
   render() {
 
@@ -106,21 +120,66 @@ class App extends Component {
         <Switch>
           <Route exact path="/" render={() => <LandingPage handleLogin={this._handleLogin} handleRegister={this._handleRegister} /> } />
 
-          <Route exact path={generateUserURL(this.state.currentUser_id, "dashboard")} render={() => (this.state.userLoggedIn ?
-                                                                (<div><NavBar handleLogout={this._handleLogout} id={this.state.currentUser_id}/>
-                                                                <Dashboard /></div>) : <Redirect to="/" />)} />
+          <Route exact path={generateUserURL(this.state.userID, "dashboard")}
+            render={() => (this.state.currentUser ?
+              (<div className="pageLayout">
+                <NavBar handleLogout={this._handleLogout} id={this.state.userID}/>
+                <Dashboard name={this.state.currentUser} userID={this.state.userID}/>
+              </div>) :
+              <Redirect to="/" />
+            )}
+          />
 
-          <Route exact path={generateUserURL(this.state.currentUser_id, "map")} render={() => (this.state.userLoggedIn ?
-                                                                (<div><NavBar handleLogout={this._handleLogout} id={this.state.currentUser_id}/>
-                                                                <Maps /></div>) : <Redirect to="/" />)} />
+          <Route exact path={generateUserURL(this.state.userID, "map")}
+            render={() => (this.state.currentUser ?
+              (<div className="pageLayout">
+                <NavBar handleLogout={this._handleLogout} id={this.state.userID}/>
+                <Maps jwt={this.state.jwt} location={this.state.location} handleLocationUpdate={this._handleLocationUpdate}/>
+              </div>) :
+              <Redirect to="/" />
+            )}
+          />
 
-          <Route exact path={generateUserURL(this.state.currentUser_id, "nutrition")} render={() => (this.state.userLoggedIn ?
-                                                                (<div><NavBar handleLogout={this._handleLogout} id={this.state.currentUser_id}/>
-                                                                <Nutrition /></div>) : <Redirect to="/" />)} />
+          <Route exact path={generateUserURL(this.state.userID, "nutrition")}
+            render={() => (this.state.currentUser ?
+              (<div className="pageLayout">
+                <NavBar handleLogout={this._handleLogout} id={this.state.userID}/>
+                <Nutrition userID={this.state.userID} name={this.state.currentUser} id={this.state.userID} jwt={this.state.jwt}/>
+              </div>) :
+              <Redirect to="/" />
+            )}
+          />
 
-          <Route exact path={generateUserURL(this.state.currentUser_id, "blog")} render={() => (this.state.userLoggedIn ?
-                                                               (<div><NavBar handleLogout={this._handleLogout} id={this.state.currentUser_id}/>
-                                                                <Blog /></div>) : <Redirect to="/" />)} />
+          <Route exact path={generateUserURL(this.state.userID, "blog")}
+            render={() => (this.state.currentUser ?
+              (<div className="pageLayout">
+                <NavBar handleLogout={this._handleLogout} id={this.state.userID}/>
+                <BlogMain name={this.state.currentUser} userID={this.state.userID}/>
+              </div>) :
+              <Redirect to="/" />
+            )}
+          />
+
+
+          <Route exact path={generateUserURL(this.state.userID, "events")}
+            render={() => (this.state.currentUser ?
+              (<div className="pageLayout">
+                <NavBar handleLogout={this._handleLogout} id={this.state.userID}/>
+                <EventMain userID={this.state.userID} />
+              </div>) :
+              <Redirect to="/" />
+            )}
+          />
+
+          <Route exact path={generateUserURL(this.state.userID, "recent")}
+            render={() => (this.state.currentUser ?
+              (<div className="pageLayout">
+                <NavBar handleLogout={this._handleLogout} id={this.state.userID}/>
+                <Recent />
+              </div>) :
+              <Redirect to="/" />
+            )}
+          />
 
           <Route exact path={generateUserURL(this.state.current_user_id, "events")} render={() => (this.state.current_user !== null ?
                                                                 (<div><NavBar id={this.state.current_user_id}/>
