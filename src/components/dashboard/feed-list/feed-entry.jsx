@@ -30,7 +30,7 @@ export default class FeedEntry extends React.Component {
           <div>
              <h3>{entry.title}</h3>
              <div>{entry.content}</div>
-             <div>{entry.link}</div>
+             <a href={entry.link}>{entry.link}</a>
           </div>
         )}
       </div>
