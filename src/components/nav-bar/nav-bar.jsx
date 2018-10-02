@@ -2,20 +2,20 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import { generateUserURL } from '../../_helper.jsx';
 import { push as Menu } from "react-burger-menu";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 export default props => {
   return (
     <Menu {... props} className="navBar">
       <li><Link to={generateUserURL(props.id, "dashboard")}>
-          <button className="navBarButtons">Dashboard</button>
+          <button className="navBarButtons"><FontAwesomeIcon icon="home" /> Dashboard</button>
       </Link></li>
       <li><Link to={generateUserURL(props.id, "map")}>
-          <button className="navBarButtons">Map</button>
+          <button className="navBarButtons"><FontAwesomeIcon icon="map-marked-alt" /> Map</button>
       </Link></li>
       <li><Link to={generateUserURL(props.id, "nutrition")}>
-          <button className="navBarButtons">Nutrition</button>
+          <button className="navBarButtons"><FontAwesomeIcon icon="utensils" /> Nutrition</button>
       </Link></li>
       <li><Link to={generateUserURL(props.id, "recent")}>
           <button className="navBarButtons">Recent</button>
