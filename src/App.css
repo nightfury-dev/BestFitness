@@ -555,8 +555,45 @@ th {
 
 
 
-.border:hover {
-  opacity: 1;
-  transform: scale(1.005);
+.gymMapLink:hover {
+  background-color: #faf5e8;
 }
+
+
+.eventsMapLink {
+  padding: 2%;
+  text-align: center;
+  width: 50%;
+  border:none;
+  font-size: 25px;
+  background: #f2f2f2;
+  color: #5c7483;
+  border-left: 1px solid #5c7483;
+  display: inline-block;
+}
+
+
+.eventsMapLink:hover {
+  background-color: #faf5e8;
+}
+
+.mapInfo {
+  text-align: left;
+}
+
+.mapInfo h3 {
+  text-align: center;
+}
+
+.gymsMapInfo {
+  text-align: center;
+  grid-gap: 50px;
+  background-color: #ddd;
+}
+
+.active {
+
+  background-color: #faf5e8;
+}
+
 
