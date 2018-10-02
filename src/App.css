@@ -172,8 +172,7 @@ li {
 }
 
 .profileHeader {
-  color: #995044;
-  font-size: 50px;
+  font-size: 32px;
   text-align: center;
   width: 100%;
   grid-column: 2 / 4;
@@ -566,15 +565,14 @@ th {
 .pageLayout {
   display: grid;
   grid-template-rows: min-content min-content;
-  background-color: #efefef;
+  background-color: #f9f7ecc9;
 }
 
 .border {
-  border: solid thin grey;
   border-radius: 5px;
-  box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
   padding: 50px;
-  background-color:#f9f7ecc9;
+  background-color:white;
   opacity: 0.8;
   transition: transform .2s;
   -webkit-animation: fadein 1.5s;
@@ -751,4 +749,51 @@ th {
   margin-right: 6px;
 }
 
+/* All forms */
+
+form {
+  display: grid;
+}
+
+label {
+  font-size: 18px;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  border: none;
+  background-color: white;
+  border-bottom: 1px solid black;
+}
+
+input[type="submit"] {
+   cursor: pointer;
+   width: 50%;
+   background-color: #474747;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    -webkit-transition-property: color;
+    -o-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+input[type="datetime-local"] {
+  padding: 5px;
+}
 
