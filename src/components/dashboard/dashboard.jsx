@@ -33,7 +33,6 @@ export default class Dashboard extends Component {
       <main className="dashboardPage">
         <div className="dashboardHeader">
           <h1>Welcome Back, {this.state.currentUser}</h1>
-          <img className="dashboardIconPic" src={IconPic} alt="IMG"></img>
         </div>
         <GoalList />
         <Activities />
