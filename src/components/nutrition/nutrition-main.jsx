@@ -135,11 +135,9 @@ export default class Nutrition extends Component {
 
   render() {
     return (
-      <main >
-        <h1>Nutrition page</h1>
-        <div className="watson">
-        This is where watson api will go.
-        </div>
+
+      <main className="nutritionPage">
+        <h2 className="nutritionHeader">Nutrition</h2>
         <NutritionInput userID={this.state.userID} submitNutritionHandler={this._submitNutritionHandler} />
         <ImageUpload uploadButtonHandler={this._uploadButtonHandler} selectImageHandler={this._selectImageHandler} image={this.state.image} />
         <NutritionQuery handleQuerySubmit={this._handleQuerySubmit} />

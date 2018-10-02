@@ -57,6 +57,7 @@ export default class Nutrition extends Component {
               height={"400px"}
               legend_toggle
             />
+            <h4>Total calories: {this.state.nutrition.calories}</h4>
           </div>
         )
       }
@@ -67,7 +68,7 @@ export default class Nutrition extends Component {
       titleTextStyle: {
         color: 'black',
         fontName: 'Roboto',
-        fontSize: 30,
+        fontSize: 18,
         bold: true,
         italic: false
       },

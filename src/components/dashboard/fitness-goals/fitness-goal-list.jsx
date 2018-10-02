@@ -4,12 +4,9 @@ import GoalForm from './fitness-goal-form.jsx'
 import GoalEntry from './fitness-goal-entry.jsx'
 const GoalList = (props) => {
   return (
-  <main className="dashboardGoalList border">
-    <h1 className="dashboardGoalHeader">Recent Goals</h1>
-    <div className="dashboardGoalCheckbox">
-      <GoalForm user_id={props.user_id} />
-      <GoalEntry user_id={props.user_id} />
-
+    <div className="dashboardGoalEntry">
+    <h3>GoalList</h3>
+      {generateGoals}
     </div>
   </main>
   )
