@@ -147,7 +147,6 @@ export default class Nutrition extends Component {
               legend_toggle
             />
           </div>
-        }
       </main>
     )
   }
