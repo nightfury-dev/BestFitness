@@ -126,27 +126,9 @@ export default class Nutrition extends Component {
 
     return (
       <main className="dashboardNutrition border">
-        {this.state.nutrition &&
-          <div className="dashboardCharts">
 
-            <Chart
-              chartType="PieChart"
-              data={[
-                ["Nutrition", "Calories"],
-                ["Protein", this.state.nutrition.protein * 4],
-                ["Fat", this.state.nutrition.fat * 9],
-                ["Carbohydrates", this.state.nutrition.carbohydrates * 4]
-                // ["Cholesterol", this.state.nutrition.cholesterol],
-                // ["Sugar", this.state.nutrition.sugar],
-                // ["Sodium", this.state.nutrition.sodium]
-              ]}
-              options={pieOptions}
-              graph_id="PieChart"
-              width={"100%"}
-              height={"400px"}
-              legend_toggle
-            />
-          </div>
+        {generateNutritionChart()}
+        {generateNoNutritionMessage()}
       </main>
     )
   }
