@@ -696,6 +696,7 @@ table {
   grid-template-rows: repeat(4, 20px) 55px
 }
 
+
 .locationLabel {
   grid-row: 1 / 2;
 }
@@ -881,7 +882,7 @@ input[type="submit"] {
   margin: 0 auto;
   cursor: pointer;
   width: 50%;
-  background-color: #474747;
+  background-color: #1a85da;
   color: white;
   padding: 8px;
   text-align: center;
@@ -912,10 +913,11 @@ input[type="datetime-local"] {
 .weeklyExercise input {
   border: none;
   border-bottom: 1px solid;
+  background-color: #f9f9f9;
 }
 
 .newBLogForm input {
-   border: none;
+  border: none;
   background-color: white;
   border-bottom: 1px solid black;
 }
@@ -938,6 +940,7 @@ input[type="datetime-local"] {
 
 .activeNutritionLink {
   color: white;
+  background-color: #25333c;
 }
 
 
@@ -946,12 +949,22 @@ input[type="datetime-local"] {
 .nutritionQueryClass {
   padding: 2%;
   text-align: center;
-  font-size: 21px;
+  font-size: 18px;
   width: 33%;
   display: inline-block;
   border: none;
   cursor: pointer;
 }
 
+.nutritionInput input {
+  background-color: #f9f9f9;
+}
 
+.locationForm input {
+  background-color: #eeeeee;
+}
+
+input.locationSubmitButton {
+  background-color: #1a85da;
+}
 
