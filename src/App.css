@@ -257,7 +257,7 @@ h3.feedTitle {
   border-radius: 10px;
   padding: 20px;
   display: grid;
-  grid-template-rows: 1.25fr repeat(2, 1fr);
+  grid-template-rows: repeat(3, min-content);
 }
 
 .blogEntryHeader {
@@ -283,7 +283,7 @@ h3.feedTitle {
   border-radius: 10px;
   padding: 20px;
   display: grid;
-  grid-template-rows: 1.25fr repeat(2, 1fr);
+  grid-template-rows: repeat(3, min-content);
 }
 
 .newBlogForm,
